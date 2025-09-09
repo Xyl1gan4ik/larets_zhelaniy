@@ -82,7 +82,7 @@ body, html, #app {
   
   /* Ваши остальные стили */
   position: relative;
-  background-image: url(../assets/image1.png);
+  background-image: url(../src/assets/image1.png);
   background-size: cover;
 }
 </style>
