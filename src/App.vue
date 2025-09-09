@@ -1,12 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
-
-onMounted(() => {
-  if (window.Telegram.WebApp) {
-    window.Telegram.WebApp.expand();
-  }
-});
-
 import { onMounted, onUnmounted } from 'vue';
 
 const updateScale = () => {
@@ -21,32 +13,25 @@ const updateScale = () => {
 };
 
 onMounted(() => {
-  // Вызываем функцию при монтировании
   updateScale();
-  
-  // Добавляем слушатель для изменения размера окна
   window.addEventListener('resize', updateScale);
-  
-  // Растягиваем приложение на весь экран в Telegram Mini App
-  if (window.Telegram.WebApp) {
+
+  if (window.Telegram?.WebApp) {
     window.Telegram.WebApp.expand();
   }
 });
 
 onUnmounted(() => {
-  // Удаляем слушатель при размонтировании, чтобы избежать утечек памяти
   window.removeEventListener('resize', updateScale);
 });
 </script>
 
 <template>
   <div class="responsive-wrapper">
-    <div class="container">
-    </div>
+    <div class="container"></div>
   </div>
   <router-view />
 </template>
-
 
 <style>
 body, html, #app {
@@ -54,10 +39,9 @@ body, html, #app {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Важно для избежания скролла */
+  overflow: hidden;
 }
 
-/* Этот класс будет масштабировать весь ваш дизайн */
 .responsive-wrapper {
   position: absolute;
   top: 0;
@@ -70,19 +54,15 @@ body, html, #app {
   overflow: hidden;
 }
 
-/* Ваш контейнер, который будет масштабироваться */
 .container {
-  /* Оставляем ваши фиксированные размеры */
   width: 360px;
   height: 644px;
-  
-  /* Масштабируем контейнер, чтобы он вписался в экран */
   transform: scale(var(--scale));
   transform-origin: top center;
-  
-  /* Ваши остальные стили */
   position: relative;
-  background-image: url(../src/assets/image1.png);
+
+  /* ✅ правильный путь */
+  background-image: url('@/assets/image1.png');
   background-size: cover;
 }
 </style>
