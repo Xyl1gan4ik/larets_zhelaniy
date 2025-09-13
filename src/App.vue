@@ -61,8 +61,5 @@ body, html, #app {
   transform-origin: top center;
   position: relative;
 
-  /* ✅ правильный путь */
-  background-image: url('@/assets/image1.png');
-  background-size: cover;
 }
 </style>
