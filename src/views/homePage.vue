@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img src="../assets/image1.png" alt="bg" class="bg">
+    
     <div class="content">
       <div class="header">
         <button class="custom-btn" @click="$router.push('/play1')">Как играть?</button>
@@ -67,14 +67,6 @@
 
 }
 
-.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: -1;
-}
 
 
 .custom-btn {

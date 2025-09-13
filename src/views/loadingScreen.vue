@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img src="../assets/image1.png" alt="bg" class="bg">
+    
 
     <!-- Сундук -->
     <img src="@/assets/chest.svg" alt="Сундук" class="chest" />
@@ -51,14 +51,7 @@ onMounted(() => {
   z-index: 1;
 }
 
-.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: -1;
-}
+
 
 .chest {
   position: absolute;
